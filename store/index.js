@@ -8,30 +8,38 @@ const createStore = () => {
         },
 
         getters: {
+            filterLocations(state) {
+                if(state.posts) {
+                    const values = Object.values(state.posts)
+                    const result = values.filter(post => {
+                        return post.category
+                    })
+                    console.log(result + 'MORE')
 
+                    return result
+                }
+            }
         },
         actions: {
 
             // get post data
-
             getPosts({
                 commit
             }) {
                 axios.get('https://skateandbed-aa4d4-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
                     .then(response => {
-                        commit('SET_POSTS', response.data)
-                        console.log(response.data);
+                        commit('setPosts', response.data)
+                        // console.log(response.data);
                     })
             }
         },
 
         mutations: {
 
-            SET_POSTS(state, posts) {
+            setPosts(state, posts) {
                 state.posts = posts;
-            }
-            
-        },
+            } 
+        }
     })
 }
 

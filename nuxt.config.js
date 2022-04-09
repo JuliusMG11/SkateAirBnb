@@ -40,7 +40,9 @@ module.exports = {
     // https://go.nuxtjs.dev/eslint
     //'@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // Simple usage
+    '@nuxtjs/vuetify'
   ],
   publicRuntimeConfig: {
     axios: {
@@ -64,5 +66,5 @@ module.exports = {
  // router: {
    //linkActiveClass: 'active'
    // 
-  },
+  }
 }

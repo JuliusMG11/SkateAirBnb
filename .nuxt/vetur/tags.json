@@ -2,6 +2,9 @@
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
   },
+  "PostList": {
+    "description": "Auto imported from components/PostList.vue"
+  },
   "TheMap": {
     "description": "Auto imported from components/TheMap.vue"
   },

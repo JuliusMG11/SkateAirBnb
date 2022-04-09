@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _1c2bb064 = () => interopDefault(import('..\\pages\\account\\index.vue' /* webpackChunkName: "pages/account/index" */))
-const _badec4a8 = () => interopDefault(import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages/admin/index" */))
-const _35e0055c = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages/login/index" */))
-const _67d66aa8 = () => interopDefault(import('..\\pages\\posts\\index.vue' /* webpackChunkName: "pages/posts/index" */))
-const _467ede00 = () => interopDefault(import('..\\pages\\registration\\index.vue' /* webpackChunkName: "pages/registration/index" */))
-const _50a803ce = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _243c0c24 = () => interopDefault(import('..\\pages\\account\\index.vue' /* webpackChunkName: "pages/account/index" */))
+const _28c8c0fc = () => interopDefault(import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages/admin/index" */))
+const _2e1aff28 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages/login/index" */))
+const _9e3d2704 = () => interopDefault(import('..\\pages\\posts\\index.vue' /* webpackChunkName: "pages/posts/index" */))
+const _fb07812c = () => interopDefault(import('..\\pages\\registration\\index.vue' /* webpackChunkName: "pages/registration/index" */))
+const _0655c103 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -24,27 +24,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/account",
-    component: _1c2bb064,
+    component: _243c0c24,
     name: "account"
   }, {
     path: "/admin",
-    component: _badec4a8,
+    component: _28c8c0fc,
     name: "admin"
   }, {
     path: "/login",
-    component: _35e0055c,
+    component: _2e1aff28,
     name: "login"
   }, {
     path: "/posts",
-    component: _67d66aa8,
+    component: _9e3d2704,
     name: "posts"
   }, {
     path: "/registration",
-    component: _467ede00,
+    component: _fb07812c,
     name: "registration"
   }, {
     path: "/",
-    component: _50a803ce,
+    component: _0655c103,
     name: "index"
   }],
 

@@ -1,7 +1,8 @@
 <template>
-<div class="maps">
+
     <div id="map">
-        <l-map style="height: 300px" :options="options">
+        {{ filterLocations }}
+        <l-map style="height: 500px" :options="options">
         <l-tile-layer 
         :options="titleLayers.options"
         :url="url"
@@ -15,12 +16,13 @@
         :key="post.id"
          :lat-lng="[post.lat, post.long]"
          >
-         <l-popup>{{ post.title }}</l-popup>
+         <l-popup>{{ post.title }}
+             {{ post.category}}
+         </l-popup>
          </l-marker>
   </l-map>
     </div>
-        <button @click="loadingShopData">tedt</button>
-    </div>
+
 </template>
 
 <script>
@@ -56,48 +58,26 @@ export default {
         ]
     };
   },
-  methods: {
-       checkPost(post) {
-            console.log(post.category)
-            if (post.category === 'skateshop') {
-                
-            }
-        },
-        
-        async loadingShopData() {
-            try {
-                const response = await fetch('https://skateandbed-aa4d4-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
+   computed: {
+   posts() {
+        return this.$store.state.posts
+    },
 
-                if (!response.ok) {
-                    console.log(response.status)
-                }
-
-                const result = await response.json()
-                console.log(result)
-
-                return result
-
-            } catch(err) {
-                console.log(err)
-            }
-        }   
-  },
-
-  moutned() {
-        loadingShopData()
-  },
-  computed: {
-        posts() {
-            return this.$store.state.loadedPosts
-        },
+    filterLocations () {
+        return this.$store.getters.filterLocations
     }
+ },
+ mounted() {
+    this.$store.dispatch('getPosts')
+  }
 }
 </script>
 
 <style lang="scss">
     #map {   
         width:100%;   
-        height:50vh;
+        height:300px;
+        overflow: hidden;
     .marker {
         background-image: url('@/assets/mapbox-icon.png');
         background-size: cover;

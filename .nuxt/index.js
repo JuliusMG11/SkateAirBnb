@@ -13,8 +13,9 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_1ac5a57c from 'nuxt_plugin_plugin_1ac5a57c' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_3a0c739f from 'nuxt_plugin_axios_3a0c739f' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_plugin_9adac57c from 'nuxt_plugin_plugin_9adac57c' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_plugin_6611f5f2 from 'nuxt_plugin_plugin_6611f5f2' // Source: .\\vuetify\\plugin.js (mode: 'all')
+import nuxt_plugin_axios_65ea6465 from 'nuxt_plugin_axios_65ea6465' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ..\\plugins\\firebase.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -80,7 +81,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"mybooks","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"mybooks","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     store,
     router,
@@ -209,12 +210,16 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_1ac5a57c === 'function') {
-    await nuxt_plugin_plugin_1ac5a57c(app.context, inject)
+  if (typeof nuxt_plugin_plugin_9adac57c === 'function') {
+    await nuxt_plugin_plugin_9adac57c(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_3a0c739f === 'function') {
-    await nuxt_plugin_axios_3a0c739f(app.context, inject)
+  if (typeof nuxt_plugin_plugin_6611f5f2 === 'function') {
+    await nuxt_plugin_plugin_6611f5f2(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_65ea6465 === 'function') {
+    await nuxt_plugin_axios_65ea6465(app.context, inject)
   }
 
   if (typeof nuxt_plugin_firebase_34d6f55a === 'function') {
