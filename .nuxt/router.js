@@ -9,6 +9,7 @@ const _28c8c0fc = () => interopDefault(import('..\\pages\\admin\\index.vue' /* w
 const _2e1aff28 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages/login/index" */))
 const _9e3d2704 = () => interopDefault(import('..\\pages\\posts\\index.vue' /* webpackChunkName: "pages/posts/index" */))
 const _fb07812c = () => interopDefault(import('..\\pages\\registration\\index.vue' /* webpackChunkName: "pages/registration/index" */))
+const _52060148 = () => interopDefault(import('..\\pages\\posts\\_id\\index.vue' /* webpackChunkName: "pages/posts/_id/index" */))
 const _0655c103 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -42,6 +43,10 @@ export const routerOptions = {
     path: "/registration",
     component: _fb07812c,
     name: "registration"
+  }, {
+    path: "/posts/:id",
+    component: _52060148,
+    name: "posts-id"
   }, {
     path: "/",
     component: _0655c103,

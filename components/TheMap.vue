@@ -1,7 +1,10 @@
 <template>
 
     <div id="map">
-        {{ filterLocations }}
+        <div class="filter-nav">
+            <button @click="accomodationLocations">Accomodation</button>
+            <button @click="skateshopLocations">Skateshop</button>
+        </div>
         <l-map style="height: 500px" :options="options">
         <l-tile-layer 
         :options="titleLayers.options"
@@ -11,15 +14,26 @@
       
         >
         </l-tile-layer>
-         <l-marker 
-        v-for="post in posts"
-        :key="post.id"
-         :lat-lng="[post.lat, post.long]"
-         >
-         <l-popup>{{ post.title }}
-             {{ post.category}}
-         </l-popup>
-         </l-marker>
+        <l-marker
+            v-for="accomodation in filterLocations.accomodation"
+            :key="accomodation.id"
+            :lat-lng="[accomodation.lat, accomodation.long]"
+            :visible="accomodationActive"
+        >
+            <l-popup>
+                {{ accomodation.category }}
+            </l-popup>
+        </l-marker>
+        <l-marker
+            v-for="skateshop in filterLocations.skateshop"
+            :key="skateshop.id"
+            :lat-lng="[skateshop.lat, skateshop.long]"
+            :visible="skateshopActive"
+        >
+            <l-popup>
+                {{ skateshop.category }}
+            </l-popup>
+        </l-marker>
   </l-map>
     </div>
 
@@ -38,6 +52,8 @@ export default {
     },
     data () {
      return {
+        accomodationActive: true,
+        skateshopActive: true,
         markerLatLng:  [50.0598058, 14.3255399],
         url: 'https://api.mapbox.com/styles/v1/julianomg/ckye93rf101wk14qpuf03drqp/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVsaWFub21nIiwiYSI6ImNrbjRhbHVlMDBmaWQydnM5ZDJrdDlhcDIifQ.cqndNn4Xp_GxuCDFByoHEA',
         options: {
@@ -58,25 +74,27 @@ export default {
         ]
     };
   },
+  methods: {
+      accomodationLocations() {
+          this.accomodationActive = !this.accomodationActive
+      },
+     skateshopLocations() {
+          this.skateshopActive = !this.skateshopActive
+      }
+  },
    computed: {
-   posts() {
-        return this.$store.state.posts
-    },
-
     filterLocations () {
         return this.$store.getters.filterLocations
     }
- },
- mounted() {
-    this.$store.dispatch('getPosts')
-  }
+ }
 }
 </script>
 
 <style lang="scss">
     #map {   
+        position: relative;
         width:100%;   
-        height:300px;
+        height:100vh;
         overflow: hidden;
     .marker {
         background-image: url('@/assets/mapbox-icon.png');
@@ -86,6 +104,12 @@ export default {
         border-radius: 50%;
         cursor: pointer;
     }
+}
+
+.filter-nav {
+    position: absolute;
+    right: 30px;
+    top: 30px;
 }
 
 

@@ -1,16 +1,14 @@
 <template>
-
-    
-  <div class="container">
-
-    <div>
-      <h1 class="title">
+  <div class="custom-container">
+     <div class="content-section">
+        <h1 class="title">
         SKATEBNB
       </h1>
-
-    </div>
-     <TheMap />
       <PostList />
+    </div>
+    <div class="map-section">
+      <TheMap />
+    </div>
   </div>
 </template>
 
@@ -41,11 +39,19 @@ export default {
 }
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
+<style lang="scss" scoped>
+.custom-container {
+  display: flex;
 }
-*/
+
+.map-section {
+  max-width: 50%;
+  display: flex;
+  flex: 1 auto;
+}
+
+.content-section {
+  max-width: 50%;
+}
 
 </style>

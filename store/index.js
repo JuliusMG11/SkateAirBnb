@@ -8,15 +8,24 @@ const createStore = () => {
         },
 
         getters: {
+
+            // filter category in the map
             filterLocations(state) {
                 if(state.posts) {
                     const values = Object.values(state.posts)
-                    const result = values.filter(post => {
-                        return post.category
+                    const accomodation = values.filter(post => {
+                        if(post.category == 'accomodation') {
+                            return post.category
+                        }
                     })
-                    console.log(result + 'MORE')
+                    const skateshop = values.filter(post => {
+                        if(post.category == 'skateshop') {
+                            return post.category
+                        }
+                    })
+                
 
-                    return result
+                    return { accomodation, skateshop }
                 }
             }
         },
@@ -28,7 +37,12 @@ const createStore = () => {
             }) {
                 axios.get('https://skateandbed-aa4d4-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
                     .then(response => {
-                        commit('setPosts', response.data)
+                        const data = response.data
+                        const postsArray = []
+                        for (const key in data) {
+                            postsArray.push({ ...data[key], id: key})
+                        }
+                        commit('setPosts', postsArray)
                         // console.log(response.data);
                     })
             }

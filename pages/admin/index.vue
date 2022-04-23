@@ -32,10 +32,14 @@
                     type="file" 
                     placeholder="image"
                     ref="fileInput"
-                    @change="onFilePicked" 
+                    @change="previewImage" 
                     accept="image/*"
-
                 >
+                
+            <div v-if="imageData!=null">                     
+                    <img class="preview" height="268" width="356" :src="img1">
+                <br>
+            </div>   
             </div>
 
              <div class="mb-4">
@@ -112,6 +116,7 @@
 
 <script>
 import axios from 'axios'
+// import firebase from 'firebase';
 
 export default {
     data() {
@@ -121,7 +126,7 @@ export default {
                     name: '',
                     email: '',
                 //  adress: '',
-                    imageUrl:'', 
+                    imageData: null ,
                     category: [],
                     content: '',
                     image: '',
@@ -141,35 +146,6 @@ export default {
             .catch(e => console.log(e));
 
         },
-
-
-        //IMAGE UPLOAD
-
-        onPickFile() {
-            this.$refs.fileInput.click();
-        },
-
-        onFilePicked ( event ) {
-            const postImage = this.$refs.fileInput.click();
-
-            console.log(postImage);
-
-
-
-
-        /*    let filename = files[0].filename;
-            if( filename.lastIndexOf('.') <= 0) {
-                return alert('please add a valid file')
-            };
-            const fileReader = new FileReader();
-            fileReader.addEventListener('load', () => {
-                this.image = fileReader.result
-            })
-            fileReader.readAsDataURL(files[0])
-
-            */
-        }
-
     }
 
 }

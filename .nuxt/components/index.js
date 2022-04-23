@@ -1,4 +1,5 @@
 export { default as Logo } from '../..\\components\\Logo.vue'
+export { default as PostDetail } from '../..\\components\\PostDetail.vue'
 export { default as PostList } from '../..\\components\\PostList.vue'
 export { default as TheMap } from '../..\\components\\TheMap.vue'
 export { default as NavigationTheNavigation } from '../..\\components\\navigation\\TheNavigation.vue'
