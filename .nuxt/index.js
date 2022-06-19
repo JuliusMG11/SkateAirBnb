@@ -13,10 +13,12 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_9adac57c from 'nuxt_plugin_plugin_9adac57c' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_plugin_6611f5f2 from 'nuxt_plugin_plugin_6611f5f2' // Source: .\\vuetify\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_65ea6465 from 'nuxt_plugin_axios_65ea6465' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ..\\plugins\\firebase.js (mode: 'all')
+import nuxt_plugin_plugin_9f86f61a from 'nuxt_plugin_plugin_9f86f61a' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_1fb9c84a from 'nuxt_plugin_plugin_1fb9c84a' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_138f88ca from 'nuxt_plugin_plugin_138f88ca' // Source: ./composition-api/plugin.mjs (mode: 'all')
+import nuxt_plugin_axios_6be04489 from 'nuxt_plugin_axios_6be04489' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ../plugins/firebase.js (mode: 'all')
+import nuxt_plugin_meta_aebf7d26 from 'nuxt_plugin_meta_aebf7d26' // Source: ./composition-api/meta.mjs (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -81,7 +83,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"mybooks","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
+    head: {"title":"SkateBnb","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     store,
     router,
@@ -210,20 +212,28 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_9adac57c === 'function') {
-    await nuxt_plugin_plugin_9adac57c(app.context, inject)
+  if (typeof nuxt_plugin_plugin_9f86f61a === 'function') {
+    await nuxt_plugin_plugin_9f86f61a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_6611f5f2 === 'function') {
-    await nuxt_plugin_plugin_6611f5f2(app.context, inject)
+  if (typeof nuxt_plugin_plugin_1fb9c84a === 'function') {
+    await nuxt_plugin_plugin_1fb9c84a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_65ea6465 === 'function') {
-    await nuxt_plugin_axios_65ea6465(app.context, inject)
+  if (typeof nuxt_plugin_plugin_138f88ca === 'function') {
+    await nuxt_plugin_plugin_138f88ca(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_6be04489 === 'function') {
+    await nuxt_plugin_axios_6be04489(app.context, inject)
   }
 
   if (typeof nuxt_plugin_firebase_34d6f55a === 'function') {
     await nuxt_plugin_firebase_34d6f55a(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_meta_aebf7d26 === 'function') {
+    await nuxt_plugin_meta_aebf7d26(app.context, inject)
   }
 
   // Lock enablePreview in context

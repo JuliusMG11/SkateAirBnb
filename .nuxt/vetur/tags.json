@@ -1,4 +1,10 @@
 {
+  "DeletePost": {
+    "description": "Auto imported from components/DeletePost.vue"
+  },
+  "EditForm": {
+    "description": "Auto imported from components/EditForm.vue"
+  },
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
   },
@@ -8,8 +14,14 @@
   "PostList": {
     "description": "Auto imported from components/PostList.vue"
   },
+  "Test": {
+    "description": "Auto imported from components/Test.vue"
+  },
   "TheMap": {
     "description": "Auto imported from components/TheMap.vue"
+  },
+  "UploadImage": {
+    "description": "Auto imported from components/uploadImage.vue"
   },
   "NavigationTheNavigation": {
     "description": "Auto imported from components/navigation/TheNavigation.vue"

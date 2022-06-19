@@ -2,50 +2,50 @@
   {
     "name": "account",
     "path": "/account",
-    "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\account\\\\index.vue",
+    "component": "/Users/juliuspetrik/Documents/GitHub/SkateAirBnb/pages/account/index.vue",
     "chunkName": "pages/account/index",
-    "_name": "_243c0c24"
+    "_name": "_960847da"
   },
   {
     "name": "admin",
     "path": "/admin",
-    "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\admin\\\\index.vue",
+    "component": "/Users/juliuspetrik/Documents/GitHub/SkateAirBnb/pages/admin/index.vue",
     "chunkName": "pages/admin/index",
-    "_name": "_28c8c0fc"
+    "_name": "_2eb5cd16"
   },
   {
     "name": "login",
     "path": "/login",
-    "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\login\\\\index.vue",
+    "component": "/Users/juliuspetrik/Documents/GitHub/SkateAirBnb/pages/login/index.vue",
     "chunkName": "pages/login/index",
-    "_name": "_2e1aff28"
+    "_name": "_3aefa5e2"
   },
   {
     "name": "posts",
     "path": "/posts",
-    "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\posts\\\\index.vue",
+    "component": "/Users/juliuspetrik/Documents/GitHub/SkateAirBnb/pages/posts/index.vue",
     "chunkName": "pages/posts/index",
-    "_name": "_9e3d2704"
+    "_name": "_9598860e"
   },
   {
     "name": "registration",
     "path": "/registration",
-    "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\registration\\\\index.vue",
+    "component": "/Users/juliuspetrik/Documents/GitHub/SkateAirBnb/pages/registration/index.vue",
     "chunkName": "pages/registration/index",
-    "_name": "_fb07812c"
+    "_name": "_177c2c69"
   },
   {
     "name": "posts-id",
     "path": "/posts/:id",
-    "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\posts\\\\_id\\\\index.vue",
+    "component": "/Users/juliuspetrik/Documents/GitHub/SkateAirBnb/pages/posts/_id/index.vue",
     "chunkName": "pages/posts/_id/index",
-    "_name": "_52060148"
+    "_name": "_7cf89938"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\index.vue",
+    "component": "/Users/juliuspetrik/Documents/GitHub/SkateAirBnb/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_0655c103"
+    "_name": "_0a46dc75"
   }
 ]

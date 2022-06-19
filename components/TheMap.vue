@@ -1,100 +1,101 @@
 <template>
-
-    <div id="map">
-        <div class="filter-nav">
-            <button @click="accomodationLocations">Accomodation</button>
-            <button @click="skateshopLocations">Skateshop</button>
-        </div>
-        <l-map style="height: 500px" :options="options">
-        <l-tile-layer 
+  <div id="map">
+    <div class="filter-nav">
+      <!-- {{ filterLocations.filming }} -->
+      <button @click="accomodationLocations">
+        Accomodation
+      </button>
+      <button @click="filmingLocations">
+        Filming
+      </button>
+    </div>
+    <l-map style="height: 100%; z-index: 5;" :options="options">
+      <l-tile-layer
         :options="titleLayers.options"
         :url="url"
         :name="titleLayers.name"
         :visible="titleLayers.visible"
-      
-        >
-        </l-tile-layer>
-        <l-marker
-            v-for="accomodation in filterLocations.accomodation"
-            :key="accomodation.id"
-            :lat-lng="[accomodation.lat, accomodation.long]"
-            :visible="accomodationActive"
-        >
-            <l-popup>
-                {{ accomodation.category }}
-            </l-popup>
-        </l-marker>
-        <l-marker
-            v-for="skateshop in filterLocations.skateshop"
-            :key="skateshop.id"
-            :lat-lng="[skateshop.lat, skateshop.long]"
-            :visible="skateshopActive"
-        >
-            <l-popup>
-                {{ skateshop.category }}
-            </l-popup>
-        </l-marker>
-  </l-map>
-    </div>
-
+      />
+      <l-marker
+        v-for="accomodation in filterLocations.accomodation"
+        :key="accomodation.id"
+        :lat-lng="[accomodation.long, accomodation.lat]"
+        :visible="accomodationActive"
+      >
+        <l-popup>
+          {{ accomodation.category }}
+        </l-popup>
+      </l-marker>
+      <l-marker
+        v-for="filming in filterLocations.filming"
+        :key="filming.id"
+        :lat-lng="[filming.long, filming.lat]"
+        :visible="filmingActive"
+      >
+        <l-popup>
+          {{ filming.category }}
+        </l-popup>
+      </l-marker>
+    </l-map>
+  </div>
 </template>
 
 <script>
-import { LMap, LTileLayer, LMarker, LPopup } from 'vue2-leaflet';
-import 'leaflet/dist/leaflet.css';
+import { LMap, LTileLayer, LMarker, LPopup } from 'vue2-leaflet'
+import 'leaflet/dist/leaflet.css'
 
 export default {
-    components: {
-        LMap,
-        LTileLayer,
-        LMarker,
-        LPopup
-    },
-    data () {
-     return {
-        accomodationActive: true,
-        skateshopActive: true,
-        markerLatLng:  [50.0598058, 14.3255399],
-        url: 'https://api.mapbox.com/styles/v1/julianomg/ckye93rf101wk14qpuf03drqp/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVsaWFub21nIiwiYSI6ImNrbjRhbHVlMDBmaWQydnM5ZDJrdDlhcDIifQ.cqndNn4Xp_GxuCDFByoHEA',
-        options: {
-          zoomControll: false,
-          center: [50.0598058, 14.3255399],
-          zoom: 12,
-        },
-        titleLayers: [
-            {
-                name: 'Mapa',
-                visible: true,
-                options: {
-                    id:  'ckye93rf101wk14qpuf03drqp',
-                    user: 'julianomg',
-                    accessToken: 'pk.eyJ1IjoianVsaWFub21nIiwiYSI6ImNrbjRhbHVlMDBmaWQydnM5ZDJrdDlhcDIifQ.cqndNn4Xp_GxuCDFByoHEA'
-                }
-            }
-        ]
-    };
+  components: {
+    LMap,
+    LTileLayer,
+    LMarker,
+    LPopup
+  },
+  data () {
+    return {
+      accomodationActive: true,
+      filmingActive: true,
+      markerLatLng: [50.0598058, 14.3255399],
+      url: 'https://api.mapbox.com/styles/v1/julianomg/ckye93rf101wk14qpuf03drqp/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVsaWFub21nIiwiYSI6ImNrbjRhbHVlMDBmaWQydnM5ZDJrdDlhcDIifQ.cqndNn4Xp_GxuCDFByoHEA',
+      options: {
+        zoomControll: false,
+        center: [50.0598058, 14.3255399],
+        zoom: 12
+      },
+      titleLayers: [
+        {
+          name: 'Mapa',
+          visible: true,
+          options: {
+            id: 'ckye93rf101wk14qpuf03drqp',
+            user: 'julianomg',
+            accessToken: 'pk.eyJ1IjoianVsaWFub21nIiwiYSI6ImNrbjRhbHVlMDBmaWQydnM5ZDJrdDlhcDIifQ.cqndNn4Xp_GxuCDFByoHEA'
+          }
+        }
+      ]
+    }
+  },
+  computed: {
+    filterLocations () {
+      return this.$store.getters.filterLocations
+    }
   },
   methods: {
-      accomodationLocations() {
-          this.accomodationActive = !this.accomodationActive
-      },
-     skateshopLocations() {
-          this.skateshopActive = !this.skateshopActive
-      }
-  },
-   computed: {
-    filterLocations () {
-        return this.$store.getters.filterLocations
+    accomodationLocations () {
+      this.accomodationActive = !this.accomodationActive
+    },
+    filmingLocations () {
+      this.filmingActive = !this.filmingActive
     }
- }
+  }
 }
 </script>
 
 <style lang="scss">
-    #map {   
+    #map {
         position: relative;
-        width:100%;   
-        height:100vh;
+        width:100%;
+        height: 100%;
         overflow: hidden;
     .marker {
         background-image: url('@/assets/mapbox-icon.png');
@@ -110,7 +111,14 @@ export default {
     position: absolute;
     right: 30px;
     top: 30px;
-}
+    z-index: 10;
 
+    button {
+        background: white;
+        color: black;
+        padding: 5px 10px;
+        border-radius: 12px;
+    }
+}
 
 </style>

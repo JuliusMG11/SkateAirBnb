@@ -1,8 +1,12 @@
-export { default as Logo } from '../..\\components\\Logo.vue'
-export { default as PostDetail } from '../..\\components\\PostDetail.vue'
-export { default as PostList } from '../..\\components\\PostList.vue'
-export { default as TheMap } from '../..\\components\\TheMap.vue'
-export { default as NavigationTheNavigation } from '../..\\components\\navigation\\TheNavigation.vue'
+export { default as DeletePost } from '../../components/DeletePost.vue'
+export { default as EditForm } from '../../components/EditForm.vue'
+export { default as Logo } from '../../components/Logo.vue'
+export { default as PostDetail } from '../../components/PostDetail.vue'
+export { default as PostList } from '../../components/PostList.vue'
+export { default as Test } from '../../components/Test.vue'
+export { default as TheMap } from '../../components/TheMap.vue'
+export { default as UploadImage } from '../../components/uploadImage.vue'
+export { default as NavigationTheNavigation } from '../../components/navigation/TheNavigation.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

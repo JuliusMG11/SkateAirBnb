@@ -6,8 +6,12 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
+- `<DeletePost>` | `<delete-post>` (components/DeletePost.vue)
+- `<EditForm>` | `<edit-form>` (components/EditForm.vue)
 - `<Logo>` | `<logo>` (components/Logo.vue)
 - `<PostDetail>` | `<post-detail>` (components/PostDetail.vue)
 - `<PostList>` | `<post-list>` (components/PostList.vue)
+- `<Test>` | `<test>` (components/Test.vue)
 - `<TheMap>` | `<the-map>` (components/TheMap.vue)
+- `<UploadImage>` | `<upload-image>` (components/uploadImage.vue)
 - `<NavigationTheNavigation>` | `<navigation-the-navigation>` (components/navigation/TheNavigation.vue)

@@ -4,13 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _243c0c24 = () => interopDefault(import('..\\pages\\account\\index.vue' /* webpackChunkName: "pages/account/index" */))
-const _28c8c0fc = () => interopDefault(import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages/admin/index" */))
-const _2e1aff28 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages/login/index" */))
-const _9e3d2704 = () => interopDefault(import('..\\pages\\posts\\index.vue' /* webpackChunkName: "pages/posts/index" */))
-const _fb07812c = () => interopDefault(import('..\\pages\\registration\\index.vue' /* webpackChunkName: "pages/registration/index" */))
-const _52060148 = () => interopDefault(import('..\\pages\\posts\\_id\\index.vue' /* webpackChunkName: "pages/posts/_id/index" */))
-const _0655c103 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _960847da = () => interopDefault(import('../pages/account/index.vue' /* webpackChunkName: "pages/account/index" */))
+const _2eb5cd16 = () => interopDefault(import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */))
+const _3aefa5e2 = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
+const _9598860e = () => interopDefault(import('../pages/posts/index.vue' /* webpackChunkName: "pages/posts/index" */))
+const _177c2c69 = () => interopDefault(import('../pages/registration/index.vue' /* webpackChunkName: "pages/registration/index" */))
+const _7cf89938 = () => interopDefault(import('../pages/posts/_id/index.vue' /* webpackChunkName: "pages/posts/_id/index" */))
+const _0a46dc75 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -25,31 +25,31 @@ export const routerOptions = {
 
   routes: [{
     path: "/account",
-    component: _243c0c24,
+    component: _960847da,
     name: "account"
   }, {
     path: "/admin",
-    component: _28c8c0fc,
+    component: _2eb5cd16,
     name: "admin"
   }, {
     path: "/login",
-    component: _2e1aff28,
+    component: _3aefa5e2,
     name: "login"
   }, {
     path: "/posts",
-    component: _9e3d2704,
+    component: _9598860e,
     name: "posts"
   }, {
     path: "/registration",
-    component: _fb07812c,
+    component: _177c2c69,
     name: "registration"
   }, {
     path: "/posts/:id",
-    component: _52060148,
+    component: _7cf89938,
     name: "posts-id"
   }, {
     path: "/",
-    component: _0655c103,
+    component: _0a46dc75,
     name: "index"
   }],
 

@@ -1,7 +1,7 @@
 <template>
   <div class="custom-container">
-     <div class="content-section">
-        <h1 class="title">
+    <div class="content-section">
+      <h1 class="title">
         SKATEBNB
       </h1>
       <PostList />
@@ -21,19 +21,18 @@ export default {
     TheMap,
     PostList
   },
-  data() {
+  data () {
     return {
 
     }
   },
- computed: {
-   posts() {
-    return this.$store.state.posts
+  computed: {
+    posts () {
+      return this.$store.state.posts
     }
-   
- },
- mounted() {
-    this.$store.dispatch("getPosts");
+  },
+  mounted () {
+    this.$store.dispatch('getPosts')
   }
 
 }
