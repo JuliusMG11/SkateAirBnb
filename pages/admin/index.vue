@@ -1,11 +1,12 @@
 <template>
-  <div class="container">
-    <h2>admin page</h2>
-    {{ post.addressLabel }}
-    <test :lat="post.lat" :lng="post.lng" @selectLocation="testLoc" />
-    <div class="w-full max-w-xs">
+  <div class="add-post-page container">
+    <div class="map-container">
+      <test :lat="post.lng" :lng="post.lat" @selectLocation="testLoc" />
+      {{ post.addressLabel }}
+    </div>
+    <div class="form-section">
       <form
-        class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        class=""
         @submit.prevent="onSubmit"
       >
         <div class="mb-4">
@@ -215,5 +216,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+.map-container {
+  padding: 0px 32px;
+}
+
+.form-section {
+  padding: 0px 32px;
+}
+
 </style>

@@ -1,20 +1,22 @@
 <template>
-  <div class="flex">
-    <!-- Map Display here -->
-    <!-- Coordinates Display here -->
+  <div class="map-section">
+    <div class="map-holder">
+      <l-map style="height: 100%; z-index: 5;" :options="options">
+        <l-tile-layer
+          :options="titleLayers.options"
+          :url="url"
+          :name="titleLayers.name"
+          :visible="titleLayers.visible"
+        />
+        <l-marker
+          :lat-lng="[lng, lat]"
+          :visible="true"
+        />
+      </l-map>
+    </div>
     <div class="dislpay-arena">
       <div class="coordinates-header">
-        <!-- <li
-          v-for="item in newLocations"
-          :key="item.id"
-          :value="item.value"
-        >
-          {{ item }}
-        </li> -->
-      </div>
-      <div class="coordinates-header">
         <h3>Current Location</h3>
-        <!-- {{ newLocations }} -->
         <div class="form-group">
           <input
             id="location"
@@ -39,20 +41,6 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="map-holder">
-      <l-map style="height: 100%; z-index: 5;" :options="options">
-        <l-tile-layer
-          :options="titleLayers.options"
-          :url="url"
-          :name="titleLayers.name"
-          :visible="titleLayers.visible"
-        />
-        <l-marker
-          :lat-lng="[lng, lat]"
-          :visible="true"
-        />
-      </l-map>
     </div>
   </div>
 </template>
@@ -102,7 +90,6 @@ export default {
 
     const location = ref('')
     const newLocations = ref('')
-
 
     watch(location, (currentValue, oldValue) => {
       searchLocation()
@@ -175,9 +162,12 @@ export default {
 
 <style lang="scss" scoped>
 .map-holder {
+  overflow: hidden;
+  border-radius: 12px;
   position: relative;
-  height: 300px;
-  width: 300px;
+  height: 120px;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
 .selectLocations {

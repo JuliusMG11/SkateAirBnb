@@ -213,12 +213,12 @@ export default {
       console.log(postData)
 
       // Write the new post's data simultaneously in the posts list and the user's post list.
-      // const updates = {}
+      const updates = {}
       // // console.log(postData)
       // // updates['/posts/' + newPostKey] = postData
-      // updates['/posts/' + uid] = postData
+      updates['/posts/' + uid] = postData
 
-      // return update(ref(db), updates)
+      return update(ref(db), updates)
     }
 
     const changeImage = reactive({

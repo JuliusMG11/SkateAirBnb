@@ -6,3 +6,8 @@
 .leaflet-default-icon-path {
     background-image: url(https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png) !important;
 }
+
+// FONTS
+@import './typography.scss';
+@import './variables';
+@import './reset.scss';

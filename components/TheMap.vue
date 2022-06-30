@@ -1,5 +1,5 @@
 <template>
-  <div id="map">
+  <div class="map-content">
     <div class="filter-nav">
       <!-- {{ filterLocations.filming }} -->
       <button @click="accomodationLocations">
@@ -9,34 +9,36 @@
         Filming
       </button>
     </div>
-    <l-map style="height: 100%; z-index: 5;" :options="options">
-      <l-tile-layer
-        :options="titleLayers.options"
-        :url="url"
-        :name="titleLayers.name"
-        :visible="titleLayers.visible"
-      />
-      <l-marker
-        v-for="accomodation in filterLocations.accomodation"
-        :key="accomodation.id"
-        :lat-lng="[accomodation.long, accomodation.lat]"
-        :visible="accomodationActive"
-      >
-        <l-popup>
-          {{ accomodation.category }}
-        </l-popup>
-      </l-marker>
-      <l-marker
-        v-for="filming in filterLocations.filming"
-        :key="filming.id"
-        :lat-lng="[filming.long, filming.lat]"
-        :visible="filmingActive"
-      >
-        <l-popup>
-          {{ filming.category }}
-        </l-popup>
-      </l-marker>
-    </l-map>
+    <div id="map">
+      <l-map style="height: 100%; z-index: 5;" :options="options">
+        <l-tile-layer
+          :options="titleLayers.options"
+          :url="url"
+          :name="titleLayers.name"
+          :visible="titleLayers.visible"
+        />
+        <l-marker
+          v-for="accomodation in filterLocations.accomodation"
+          :key="accomodation.id"
+          :lat-lng="[accomodation.long, accomodation.lat]"
+          :visible="accomodationActive"
+        >
+          <l-popup>
+            {{ accomodation.category }}
+          </l-popup>
+        </l-marker>
+        <l-marker
+          v-for="filming in filterLocations.filming"
+          :key="filming.id"
+          :lat-lng="[filming.long, filming.lat]"
+          :visible="filmingActive"
+        >
+          <l-popup>
+            {{ filming.category }}
+          </l-popup>
+        </l-marker>
+      </l-map>
+    </div>
   </div>
 </template>
 
@@ -93,9 +95,10 @@ export default {
 
 <style lang="scss">
     #map {
-        position: relative;
-        width:100%;
-        height: 100%;
+        position: fixed;
+        top: 0px;
+        width:48%;
+        height: 100vh;
         overflow: hidden;
     .marker {
         background-image: url('@/assets/mapbox-icon.png');
@@ -108,7 +111,7 @@ export default {
 }
 
 .filter-nav {
-    position: absolute;
+    position: fixed;
     right: 30px;
     top: 30px;
     z-index: 10;

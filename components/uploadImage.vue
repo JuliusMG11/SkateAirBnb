@@ -1,14 +1,12 @@
 <template>
-  <div class="">TEST {{ image }}
-    <div class="image">
-      <img :src="pathImage.image" alt="">
-    </div>
+  <div class="image">
+    <img :src="pathImage.image" alt="">
   </div>
 </template>
 
 <script>
 import { getStorage, ref, getDownloadURL } from 'firebase/storage'
-import { onUpdated, reactive } from '@nuxtjs/composition-api'
+import { onBeforeMount, onMounted, onUpdated, reactive } from '@nuxtjs/composition-api'
 
 export default {
   props: {
@@ -21,7 +19,7 @@ export default {
     })
 
     // GET IMAGE FROM POST ID
-    const testFunction = () => {
+    const getImageUrl = () => {
       getDownloadURL(ref(storage, `${props.image}`))
         .then((url) => {
           console.log('**********' + url)
@@ -31,11 +29,11 @@ export default {
           console.log(error)
         })
     }
-
-    // testFunction()
-
     onUpdated(() => {
-      testFunction()
+      getImageUrl()
+    })
+    onBeforeMount(() => {
+      getImageUrl()
     })
     return {
       pathImage
@@ -45,15 +43,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.image {
-    width: 200px;
-    height: 200px;
-    position: relative;
-}
-
-.image img {
-    max-width: 100%;
-}
-
+// .image {
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+// }
 
 </style>

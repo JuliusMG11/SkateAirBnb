@@ -10,7 +10,7 @@ import '../node_modules/@nuxtjs/tailwindcss/lib/files/tailwind.css'
 
 import '../assets/css/main.css'
 
-import '../assets/css/main.scss'
+import '../assets/scss/main.scss'
 
 import '../node_modules/vuetify/dist/vuetify.css'
 

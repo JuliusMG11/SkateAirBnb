@@ -1,77 +1,33 @@
 <template>
-  <div>
-    <ul class="flex">
-      <li class="mr-6">
-        <nuxt-link to="/">
-          Home
-        </nuxt-link>
-      </li>
-      <li class="mr-6">
-        <nuxt-link to="/posts">
-          All Posts
-        </nuxt-link>
-      </li>
-      <li class="mr-6">
-        <nuxt-link to="/admin">
-          Admin
-        </nuxt-link>
-      </li>
-      <li class="mr-6">
-        <nuxt-link v-if="!user" to="/login">
-          Login
-        </nuxt-link>
-      </li>
-      <li class="mr-6">
-        <nuxt-link v-if="!user" to="/registration">
-          registration
-        </nuxt-link>
-      </li>
-      <li class="mr-6">
-        <a v-if="user" @click="signOut">Sign Out</a>
-      </li>
-    </ul>
-    <Nuxt />
+  <div class="custom-layout">
+    <div class="main">
+      <div class="navigation">
+        <TheNavigation />
+      </div>
+      <Nuxt />
+    </div>
+    <div class="map">
+      <TheMap />
+    </div>
   </div>
 </template>
 
 <script>
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/auth'
-import 'firebase/compat/firestore'
+import TheNavigation from '../components/navigation/TheNavigation.vue'
+import TheMap from '../components/TheMap.vue'
 
 export default {
-  data () {
-    return {
-      user: ''
-    }
-  },
-  mounted () {
-    firebase.auth().onAuthStateChanged((user) => {
-      this.user = user
-    })
-  },
-  methods: {
-    signOut () {
-      firebase.auth().signOut().then((result) => {
-        this.user = ''
-        this.$router.push('/')
-      })
-    }
+  components: {
+    TheNavigation,
+    TheMap
   }
 }
+
 </script>
 
-<style>
+<style lang="scss" scoped>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -81,11 +37,26 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.custom-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.map {
+  width: 50%;
+  display: flex;
+  flex: 1 auto;
 }
 
 .button--green {

@@ -5,9 +5,6 @@
   "EditForm": {
     "description": "Auto imported from components/EditForm.vue"
   },
-  "Logo": {
-    "description": "Auto imported from components/Logo.vue"
-  },
   "PostDetail": {
     "description": "Auto imported from components/PostDetail.vue"
   },
@@ -22,6 +19,12 @@
   },
   "UploadImage": {
     "description": "Auto imported from components/uploadImage.vue"
+  },
+  "HomepageTheAds": {
+    "description": "Auto imported from components/homepage/TheAds.vue"
+  },
+  "NavigationLogo": {
+    "description": "Auto imported from components/navigation/Logo.vue"
   },
   "NavigationTheNavigation": {
     "description": "Auto imported from components/navigation/TheNavigation.vue"
