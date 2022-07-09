@@ -16,19 +16,17 @@
     </div>
     <div class="dislpay-arena">
       <div class="coordinates-header">
-        <h3>Current Location</h3>
         <div class="form-group">
           <input
             id="location"
             v-model="location"
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
-            placeholder="location"
+            placeholder="Find your location..."
             @submit.prevent="searchLocation()"
           >
         </div>
-        <label for="locations">Choose address:</label>
-        <ul class="selectLocations">
+        <ul v-if="location" class="selectLocations">
           <li
             v-for="item in newLocations"
             :key="item.id"
@@ -124,38 +122,6 @@ export default {
       center: [0, 0],
       map: {}
     }
-  },
-  mounted () {
-    // this.createMap()
-    // const geocoder = new MapboxGeocoder({
-    //   accessToken: this.access_token,
-    //   mapboxgl: mapboxgl
-    // })
-
-    // document.getElementById('geocoder').appendChild(geocoder)
-
-  },
-  methods: {
-    // getLocation () {
-    //   const geocoder = new MapboxGeocoder({
-    //     accessToken: mapboxgl.accessToken,
-    //     mapboxgl: mapboxgl
-    //   })
-
-    //   console.log(location)
-    //   try {
-    //     this.loading = true
-    //     const response = await axios.get(
-    //     `https://api.mapbox.com/geocoding/v5/mapbox.places/${this.center[0]},${this.center[1]}.json?access_token=${this.access_token}`
-    //     )
-    //     this.loading = false
-    //     this.location = response.data.features[0].place_name
-    //     console.log(location)
-    //   } catch (err) {
-    //     this.loading = false
-    //     console.log(err)
-    //   }
-    // }
   }
 }
 </script>
@@ -172,8 +138,8 @@ export default {
 
 .selectLocations {
   position: relative;
-  max-width: 200px;
   max-height: 200px;
   overflow: scroll;
+  margin: 16px 0px;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div class="">
-   <span v-if="testLocation.lat > 0">Nova Lokacia je:{{ testLocation.addressLabel }} </span> 
-    <test
-      v-if="testLocation.lat > 0 || loadedPost.lat > 0"
-      :lat="testLocation.lat || loadedPost.lat"
-      :lng="testLocation.long || loadedPost.long"
+    <span v-if="newLocation.lat > 0">Nova Lokacia je:{{ newLocation.addressLabel }} </span>
+    <searchLocation
+      v-if="newLocation.lat > 0 || loadedPost.lat > 0"
+      :lat="newLocation.lat || loadedPost.lat"
+      :lng="newLocation.long || loadedPost.long"
       @selectLocation="testLoc"
     />
     MOREE {{ loadedPost.addressLabel }}
@@ -19,9 +19,9 @@
         email = loadedPost.email,
         content = loadedPost.content,
         category = loadedPost.category,
-        lat = testLocation.lat || loadedPost.lat,
-        long = testLocation.long || loadedPost.long,
-        addressLabel = testLocation.addressLabel || loadedPost.addressLabel,
+        lat = newLocation.lat || loadedPost.lat,
+        long = newLocation.long || loadedPost.long,
+        addressLabel = newLocation.addressLabel || loadedPost.addressLabel,
         image = changeImage.image || loadedPost.image
       )"
     >
@@ -141,16 +141,17 @@
 <script>
 import { getDatabase, ref, update } from 'firebase/database'
 import { reactive, useRoute, onMounted } from '@nuxtjs/composition-api'
-import test from '../components/Test.vue'
 import uploadImage from '../components/uploadImage.vue'
+import searchLocation from '../components/searchLocation.vue'
 
 export default {
   components: {
-    uploadImage
+    uploadImage,
+    searchLocation
   },
-  import: {
-    test
-  },
+  // import: {
+  //   searchLocation
+  // },
   props: {
     loadedPost: {
       type: Object,
@@ -158,29 +159,29 @@ export default {
     },
     image: {
       type: String,
-      required: false
+      default: ''
     }
   },
   setup (props) {
     const post = props.loadedPost
-    const testLocation = reactive({
+    const newLocation = reactive({
       addressLabel: '',
       lat: null,
       long: null
     })
 
     const getLocation = () => {
-      testLocation.addressLabel = props.loadedPost.addressLabel
-      testLocation.lat = props.loadedPost.lat
-      testLocation.long = props.loadedPost.long
+      newLocation.addressLabel = props.loadedPost.addressLabel
+      newLocation.lat = props.loadedPost.lat
+      newLocation.long = props.loadedPost.long
     }
 
-    console.log('Label' + testLocation.addressLabel)
+    console.log('Label' + newLocation.addressLabel)
 
     const testLoc = (item) => {
-      testLocation.addressLabel = item.label
-      testLocation.lat = item.x
-      testLocation.long = item.y
+      newLocation.addressLabel = item.label
+      newLocation.lat = item.x
+      newLocation.long = item.y
     }
 
     // const newPost = reactive({
@@ -248,7 +249,7 @@ export default {
       onEdit,
       post,
       uid,
-      testLocation,
+      newLocation,
       testLoc,
       previewImage,
       changeImage,

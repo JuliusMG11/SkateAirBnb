@@ -53,10 +53,13 @@ body {
   height: 100vh;
 }
 
+.main {
+  flex: 1 1 50%;
+}
+
 .map {
-  width: 50%;
   display: flex;
-  flex: 1 auto;
+  flex: 1 1 50%;
 }
 
 .button--green {

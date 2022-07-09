@@ -97,7 +97,7 @@ export default {
     #map {
         position: fixed;
         top: 0px;
-        width:48%;
+        width: 50%;
         height: 100vh;
         overflow: hidden;
     .marker {

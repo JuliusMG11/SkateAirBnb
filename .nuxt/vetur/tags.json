@@ -11,11 +11,11 @@
   "PostList": {
     "description": "Auto imported from components/PostList.vue"
   },
-  "Test": {
-    "description": "Auto imported from components/Test.vue"
-  },
   "TheMap": {
     "description": "Auto imported from components/TheMap.vue"
+  },
+  "SearchLocation": {
+    "description": "Auto imported from components/searchLocation.vue"
   },
   "UploadImage": {
     "description": "Auto imported from components/uploadImage.vue"
