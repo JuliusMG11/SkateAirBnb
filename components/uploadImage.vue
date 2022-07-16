@@ -22,14 +22,14 @@ export default {
     const getImageUrl = () => {
       getDownloadURL(ref(storage, `${props.image}`))
         .then((url) => {
-          console.log('**********' + url)
           pathImage.image = url
         })
         .catch((error) => {
           console.log(error)
         })
     }
-    onUpdated(() => {
+
+    onMounted(() => {
       getImageUrl()
     })
     onBeforeMount(() => {

@@ -11,14 +11,17 @@
   "PostList": {
     "description": "Auto imported from components/PostList.vue"
   },
-  "TheMap": {
-    "description": "Auto imported from components/TheMap.vue"
-  },
   "SearchLocation": {
     "description": "Auto imported from components/searchLocation.vue"
   },
+  "TheMap": {
+    "description": "Auto imported from components/TheMap.vue"
+  },
   "UploadImage": {
     "description": "Auto imported from components/uploadImage.vue"
+  },
+  "PostForm": {
+    "description": "Auto imported from components/postForm/PostForm.vue"
   },
   "HomepageTheAds": {
     "description": "Auto imported from components/homepage/TheAds.vue"

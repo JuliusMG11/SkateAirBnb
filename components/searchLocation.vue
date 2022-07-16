@@ -16,6 +16,7 @@
     </div>
     <div class="dislpay-arena">
       <div class="coordinates-header">
+        
         <div class="form-group">
           <input
             id="location"
@@ -24,6 +25,7 @@
             type="text"
             placeholder="Find your location..."
             @submit.prevent="searchLocation()"
+            required
           >
         </div>
         <ul v-if="location" class="selectLocations">
@@ -34,8 +36,6 @@
             @click="$emit('selectLocation', item)"
           >
             {{ item.label }}
-            {{ item.lat }}
-            {{ item.lon }}
           </li>
         </ul>
       </div>
@@ -48,8 +48,17 @@
 import { OpenStreetMapProvider } from 'leaflet-geosearch'
 import { ref, watch } from '@nuxtjs/composition-api'
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet'
+import { onMounted } from '@nuxtjs/composition-api'
 
 export default {
+  head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css',
+        },
+      ],
+  },
   components: {
     LMap,
     LTileLayer,
@@ -86,6 +95,7 @@ export default {
     }
     const provider = new OpenStreetMapProvider()
 
+
     const location = ref('')
     const newLocations = ref('')
 
@@ -97,8 +107,34 @@ export default {
       await provider.search({ query: location.value })
         .then(function (result) {
           newLocations.value = result
+            const test = newLocations.value
+           console.log(test)
         })
     }
+
+    const clearLocation = () => {
+      if ( newLocations.value) {
+        console.log('super')
+      }
+    }
+
+    // const map = new mapboxgl.Map({
+    //       accessToken: 'pk.eyJ1IjoianVsaWFub21nIiwiYSI6ImNrbjRhbHVlMDBmaWQydnM5ZDJrdDlhcDIifQ.cqndNn4Xp_GxuCDFByoHEA',
+    //       container: 'map-holder', // <div id="map"></div>
+    //       style: 'mapbox://styles/mapbox/streets-v9', // default style
+    //       center: [-21.9270884, 64.1436456], // starting position as [lng, lat]
+    //       zoom: 13
+    //   })
+
+    //      map.flyTo({
+    //         center: [props.lat, props.lng],
+    //         essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    //       });
+
+
+    // onMounted(() => {
+    //    const mapboxgl = require('mapbox-gl')
+    // })
 
     return {
       location,
@@ -108,7 +144,8 @@ export default {
       titleLayers,
       url,
       newLat,
-      newLng
+      newLng,
+      clearLocation 
     }
   },
   data () {
