@@ -3,42 +3,49 @@
     "name": "account",
     "path": "/account",
     "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\account\\\\index.vue",
-    "chunkName": "pages/account/index"
+    "chunkName": "pages/account/index",
+    "_name": "_243c0c24"
   },
   {
     "name": "admin",
     "path": "/admin",
     "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\admin\\\\index.vue",
-    "chunkName": "pages/admin/index"
+    "chunkName": "pages/admin/index",
+    "_name": "_28c8c0fc"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\login\\\\index.vue",
-    "chunkName": "pages/login/index"
+    "chunkName": "pages/login/index",
+    "_name": "_2e1aff28"
   },
   {
     "name": "posts",
     "path": "/posts",
     "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\posts\\\\index.vue",
-    "chunkName": "pages/posts/index"
+    "chunkName": "pages/posts/index",
+    "_name": "_9e3d2704"
   },
   {
     "name": "registration",
     "path": "/registration",
     "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\registration\\\\index.vue",
-    "chunkName": "pages/registration/index"
+    "chunkName": "pages/registration/index",
+    "_name": "_fb07812c"
   },
   {
     "name": "posts-id",
     "path": "/posts/:id",
     "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\posts\\\\_id\\\\index.vue",
-    "chunkName": "pages/posts/_id/index"
+    "chunkName": "pages/posts/_id/index",
+    "_name": "_52060148"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\juliu\\\\Documents\\\\GitHub\\\\SkateAirBnb\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_0655c103"
   }
 ]

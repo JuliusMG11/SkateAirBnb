@@ -13,7 +13,7 @@ You can directly use them in pages and other components without the need to impo
 - `<SearchLocation>` | `<search-location>` (components/searchLocation.vue)
 - `<TheMap>` | `<the-map>` (components/TheMap.vue)
 - `<UploadImage>` | `<upload-image>` (components/uploadImage.vue)
-- `<PostForm>` | `<post-form>` (components/postForm/PostForm.vue)
 - `<HomepageTheAds>` | `<homepage-the-ads>` (components/homepage/TheAds.vue)
+- `<PostForm>` | `<post-form>` (components/postForm/PostForm.vue)
 - `<NavigationLogo>` | `<navigation-logo>` (components/navigation/Logo.vue)
 - `<NavigationTheNavigation>` | `<navigation-the-navigation>` (components/navigation/TheNavigation.vue)
