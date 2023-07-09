@@ -40,11 +40,11 @@
               :key="item.id"
               class="tags"
             >
-              <div v-if="item == ['accomodation']">
-                <img src="../assets/img/icons/accomodation.svg" alt="">
+              <div v-if="item == ['skater']">
+                <img src="../assets/img/icons/skater.svg" alt="">
               </div>
-              <div v-if="item == ['filming']">
-                <img src="../assets/img/icons/camera.svg" alt="">
+              <div v-if="item == ['place']">
+                <img src="../assets/img/icons/place.svg" alt="">
               </div>
               <!-- <span>{{ item }}</span> -->
             </div>

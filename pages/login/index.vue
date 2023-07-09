@@ -1,38 +1,38 @@
 <template>
-    <div>
-
+  <div>
     <h1>Login</h1>
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+          Email
+        </label>
+        <input
+          v-model="email"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          type="email"
+          placeholder="Email"
+        >
+      </div>
 
-            <form 
-        class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"   
-            >
-
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
-                Email
-            </label>
-            <input 
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                type="email" 
-                placeholder="Email"
-                v-model="email"
-            >
-        </div>
-
-            <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
-                Password
-            </label>
-            <input 
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                type="password" 
-                placeholder="Password"
-                v-model="password"
-            >
-        </div>
-        <button @click.prevent="pressed" type="submit">submit</button>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+          Password
+        </label>
+        <input
+          v-model="password"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          type="password"
+          placeholder="Password"
+        >
+      </div>
+      <button
+        type="submit"
+        @click.prevent="pressed"
+      >
+        submit
+      </button>
     </form>
-</div>
+  </div>
 </template>
 
 <script>
@@ -53,7 +53,7 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then( user => { console.log(user)
+        .then(user => { console.log(user)
           this.$router.push('/')
         })
         .catch(error => {

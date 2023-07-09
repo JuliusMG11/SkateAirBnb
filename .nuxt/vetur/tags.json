@@ -11,11 +11,11 @@
   "PostList": {
     "description": "Auto imported from components/PostList.vue"
   },
-  "SearchLocation": {
-    "description": "Auto imported from components/searchLocation.vue"
-  },
   "TheMap": {
     "description": "Auto imported from components/TheMap.vue"
+  },
+  "SearchLocation": {
+    "description": "Auto imported from components/searchLocation.vue"
   },
   "UploadImage": {
     "description": "Auto imported from components/uploadImage.vue"
@@ -23,13 +23,13 @@
   "HomepageTheAds": {
     "description": "Auto imported from components/homepage/TheAds.vue"
   },
-  "PostForm": {
-    "description": "Auto imported from components/postForm/PostForm.vue"
-  },
   "NavigationLogo": {
     "description": "Auto imported from components/navigation/Logo.vue"
   },
   "NavigationTheNavigation": {
     "description": "Auto imported from components/navigation/TheNavigation.vue"
+  },
+  "PostForm": {
+    "description": "Auto imported from components/postForm/PostForm.vue"
   }
 }

@@ -12,10 +12,10 @@ const createStore = () => {
       // filter category in the map
       filterLocations (state) {
         if (state.posts) {
-          const accomodation = state.posts.filter(post => post.category[0] === 'accomodation')
-          const filming = state.posts.filter(post => post.category[0] === 'filming')
+          const skater = state.posts.filter(post => post.category[0] === 'skater')
+          const place = state.posts.filter(post => post.category[0] === 'place')
 
-          return { accomodation, filming }
+          return { skater, place }
         }
       }
     },

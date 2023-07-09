@@ -1,12 +1,12 @@
 <template>
   <div class="map-content">
     <div class="filter-nav">
-      <!-- {{ filterLocations.filming }} -->
-      <button @click="accomodationLocations">
-        Accomodation
+      <!-- {{ filterLocations.place }} -->
+      <button @click="skaterLocations">
+        skater
       </button>
-      <button @click="filmingLocations">
-        Filming
+      <button @click="placeLocations">
+        place
       </button>
     </div>
     <div id="map">
@@ -18,23 +18,23 @@
           :visible="titleLayers.visible"
         />
         <l-marker
-          v-for="accomodation in filterLocations.accomodation"
-          :key="accomodation.id"
-          :lat-lng="[accomodation.long, accomodation.lat]"
-          :visible="accomodationActive"
+          v-for="skater in filterLocations.skater"
+          :key="skater.id"
+          :lat-lng="[skater.long, skater.lat]"
+          :visible="skaterActive"
         >
           <l-popup>
-            {{ accomodation.category }}
+            {{ skater.category }}
           </l-popup>
         </l-marker>
         <l-marker
-          v-for="filming in filterLocations.filming"
-          :key="filming.id"
-          :lat-lng="[filming.long, filming.lat]"
-          :visible="filmingActive"
+          v-for="place in filterLocations.place"
+          :key="place.id"
+          :lat-lng="[place.long, place.lat]"
+          :visible="placeActive"
         >
           <l-popup>
-            {{ filming.category }}
+            {{ place.category }}
           </l-popup>
         </l-marker>
       </l-map>
@@ -55,8 +55,8 @@ export default {
   },
   data () {
     return {
-      accomodationActive: true,
-      filmingActive: true,
+      skaterActive: true,
+      placeActive: true,
       markerLatLng: [50.0598058, 14.3255399],
       url: 'https://api.mapbox.com/styles/v1/julianomg/ckye93rf101wk14qpuf03drqp/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVsaWFub21nIiwiYSI6ImNrbjRhbHVlMDBmaWQydnM5ZDJrdDlhcDIifQ.cqndNn4Xp_GxuCDFByoHEA',
       options: {
@@ -83,11 +83,11 @@ export default {
     }
   },
   methods: {
-    accomodationLocations () {
-      this.accomodationActive = !this.accomodationActive
+    skaterLocations () {
+      this.skaterActive = !this.skaterActive
     },
-    filmingLocations () {
-      this.filmingActive = !this.filmingActive
+    placeLocations () {
+      this.placeActive = !this.placeActive
     }
   }
 }

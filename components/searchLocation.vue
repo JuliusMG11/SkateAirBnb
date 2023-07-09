@@ -1,11 +1,10 @@
 <template>
   <div class="map-section">
     <div class="map-holder">
-       <div id="map-test"></div>
+      <div id="map-test" />
     </div>
     <div class="dislpay-arena">
       <div class="coordinates-header">
-        
         <div class="form-group">
           <input
             id="location"
@@ -13,8 +12,8 @@
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             placeholder="Find your location..."
-            @submit.prevent="searchLocation()"
             required
+            @submit.prevent="searchLocation()"
           >
         </div>
         <ul v-if="location" class="selectLocations">
@@ -35,19 +34,11 @@
 <script>
 // import axios from 'axios'
 import { OpenStreetMapProvider } from 'leaflet-geosearch'
-import { ref, watch, onMounted, computed } from '@nuxtjs/composition-api'
-import 'mapbox-gl/dist/mapbox-gl.css';
+import { ref, watch, onMounted } from '@nuxtjs/composition-api'
+import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl from 'mapbox-gl'
 
 export default {
-  head: {
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css',
-        },
-      ],
-  },
   props: {
     lat: {
       type: Number,
@@ -65,7 +56,6 @@ export default {
 
     const provider = new OpenStreetMapProvider()
 
-
     const location = ref('')
     const newLocations = ref('')
 
@@ -81,7 +71,7 @@ export default {
     }
 
     const clearLocation = () => {
-      if ( newLocations.value) {
+      if (newLocations.value) {
         console.log('super')
       }
     }
@@ -92,50 +82,48 @@ export default {
     const changeLng = ref('')
 
     const selectCenterLocation = () => {
-        if (newLat < 0) {
-          console.log('**************' + props.lng, props.lat + '**************')
-          return props.lng, props.lat
-        }
-        if (props.lat < 0) {
-          console.log('**************' + [18.1112229, 49.041469] + '**************')
-          return 18.1112229, 49.041469
-        }
+      if (newLat < 0) {
+        console.log('**************' + props.lng, props.lat + '**************')
+        return props.lng, props.lat
+      }
+      if (props.lat < 0) {
+        console.log('**************' + [18.1112229, 49.041469] + '**************')
+        return 18.1112229, 49.041469
+      }
     }
 
     selectCenterLocation()
     // CREATE MAP MAPBOX
 
     const createMap = () => {
-        mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWFub21nIiwiYSI6ImNrbjRhbHVlMDBmaWQydnM5ZDJrdDlhcDIifQ.cqndNn4Xp_GxuCDFByoHEA'
-        map = new mapboxgl.Map({
-          container: 'map-test', // <div id="map"></div>
-          style: 'mapbox://styles/julianomg/ckye93rf101wk14qpuf03drqp', // default style
-          center: [18.1112229, 49.041469], // starting position as [lng, lat]
-          zoom: 4
+      mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWFub21nIiwiYSI6ImNrbjRhbHVlMDBmaWQydnM5ZDJrdDlhcDIifQ.cqndNn4Xp_GxuCDFByoHEA'
+      map = new mapboxgl.Map({
+        container: 'map-test', // <div id="map"></div>
+        style: 'mapbox://styles/julianomg/ckye93rf101wk14qpuf03drqp', // default style
+        center: [18.1112229, 49.041469], // starting position as [lng, lat]
+        zoom: 4
       })
     }
 
-     const changeLocation = (item) => {
+    const changeLocation = (item) => {
       changeLat.value = item.x
       changeLng.value = item.y
 
-      
       // ZOOM TO CLICK LOCATION
       map.flyTo({
-            center: [changeLat.value,  changeLng.value],
-            essential: true, // this animation is considered essential with respect to prefers-reduced-motion,
-            zoom: 12
-      });
+        center: [changeLat.value, changeLng.value],
+        essential: true, // this animation is considered essential with respect to prefers-reduced-motion,
+        zoom: 12
+      })
       // ADD NEW MARKER
       return new mapboxgl.Marker()
-      .setLngLat([changeLat.value,changeLng.value])
-      .addTo(map)
+        .setLngLat([changeLat.value, changeLng.value])
+        .addTo(map)
     }
 
-
     onMounted(() => {
-       createMap()
-       selectCenterLocation
+      createMap()
+      // selectCenterLocation
     })
 
     return {
@@ -146,7 +134,7 @@ export default {
       newLat,
       newLng,
       clearLocation,
-      changeLocation,
+      changeLocation
     }
   },
   data () {
@@ -160,6 +148,14 @@ export default {
       center: [0, 0],
       map: {}
     }
+  },
+  head: {
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css',
+      }
+    ]
   }
 }
 </script>

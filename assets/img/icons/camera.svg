@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <g id="Group_1" data-name="Group 1" transform="translate(388 -76)">
-    <rect id="Rectangle_6" data-name="Rectangle 6" width="32" height="32" transform="translate(-388 76)" fill="none"/>
-    <path id="videocam_FILL0_wght400_GRAD0_opsz48" d="M5.65,26a1.566,1.566,0,0,1-1.155-.506A1.637,1.637,0,0,1,4,24.313V9.688a1.637,1.637,0,0,1,.5-1.181A1.566,1.566,0,0,1,5.65,8h14.3a1.566,1.566,0,0,1,1.155.506,1.637,1.637,0,0,1,.5,1.181v6.047l4.4-4.5V22.766l-4.4-4.5v6.047a1.637,1.637,0,0,1-.5,1.181A1.566,1.566,0,0,1,19.95,26Zm0-1.687h14.3V9.688H5.65Zm0,0v0Z" transform="translate(-387 75)" fill="#42679e"/>
-  </g>
-</svg>
